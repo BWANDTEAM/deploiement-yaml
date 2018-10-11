@@ -2,4 +2,4 @@
 
 Fichier yaml de configuration de déploiement kubernetes
 
-![Architecture](https://thumb.ibb.co/eCEL19/Untitled_Diagram_line_5.jpg)
+![Architecture](https://preview.ibb.co/gkqtM9/Untitled_Diagram_line_5.jpg)
