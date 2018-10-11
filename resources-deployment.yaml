@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resources-deployment
+  namespace: packapp08
+spec:
+  selector:
+    matchLabels:
+      app: resources
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: resources
+    spec:
+      containers:
+      - name: resources
+        image: registry.hackathon-container.com/packapp08/resources:1.0
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: registry

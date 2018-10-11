@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: advisorservice-deployment
+  namespace: packapp08
+spec:
+  selector:
+    matchLabels:
+      app: advisorservice
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: advisorservice
+    spec:
+      containers:
+      - name: advisorservice
+        image: registry.hackathon-container.com/packapp08/advisorservice:3.0
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: registry

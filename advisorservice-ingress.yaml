@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: advisorservice
+  namespace: packapp08
+spec:
+  rules:
+  - host: backadvisor08.hackathon-container.com
+    http:
+      paths:
+      - backend:
+          serviceName: advisorservice-svc
+          servicePort: 8080
+  tls:
+  - hosts:
+    - backadvisor08.hackathon-container.com

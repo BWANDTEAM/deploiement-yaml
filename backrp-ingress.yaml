@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: backrp
+  namespace: packapp08
+spec:
+  rules:
+  - host: backrp08.hackathon-container.com
+    http:
+      paths:
+      - backend:
+          serviceName: backrp-svc
+          servicePort: 1003
+  tls:
+  - hosts:
+    - backrp08.hackathon-container.com

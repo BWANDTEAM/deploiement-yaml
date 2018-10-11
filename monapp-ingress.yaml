@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: monapp
+  namespace: packapp08
+spec:
+  rules:
+  - host: monapp08.hackathon-container.com
+    http:
+      paths:
+      - backend:
+          serviceName: monapp-svc
+          servicePort: 80
+  tls:
+  - hosts:
+    - monapp08.hackathon-container.com

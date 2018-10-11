@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rp-deployment
+  namespace: packapp08
+spec:
+  selector:
+    matchLabels:
+      app: rp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: rp
+    spec:
+      containers:
+      - name: rp
+        image: registry.hackathon-container.com/packapp08/rp:3.0
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: registry

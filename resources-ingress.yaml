@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: resources
+  namespace: packapp08
+spec:
+  rules:
+  - host: resources08.hackathon-container.com
+    http:
+      paths:
+      - backend:
+          serviceName: resources-svc
+          servicePort: 1001
+  tls:
+  - hosts:
+    - resources08.hackathon-container.com

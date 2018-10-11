@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rp-svc
+  namespace: packapp08
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 1002
+    targetPort: 1000
+    protocol: TCP
+  selector:
+    app: rp

@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: rp
+  namespace: packapp08
+spec:
+  rules:
+  - host: rp08.hackathon-container.com
+    http:
+      paths:
+      - backend:
+          serviceName: rp-svc
+          servicePort: 1002
+  tls:
+  - hosts:
+    - rp08.hackathon-container.com

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backrp-deployment
+  namespace: packapp08
+spec:
+  selector:
+    matchLabels:
+      app: backrp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: backrp
+    spec:
+      containers:
+      - name: backrp
+        image: registry.hackathon-container.com/packapp08/backrp:3.0
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: registry
